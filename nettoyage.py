@@ -6,7 +6,7 @@ filename1='data/donnees1.csv'
 f = open(filename, 'rb')
 f1 = open(filename1, 'wb')
 
-reader = csv.reader(f, delimiter=';')
+reader = csv.reader(f, delimiter=',')
 writer = csv.writer(f1)
 
 writer.writerow (reader.next())
