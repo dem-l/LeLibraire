@@ -1,6 +1,12 @@
 import os
 import sys
-	
+import csv 
+import time 
+import datetime 
+
+wekaJarPath = "lib/weka.jar" 
+
+# ----- Processing Data Methods ----- #	
 def removeZeros (ifn, ofn):
 	f = open(ifn, 'rb')
 	f1 = open(ofn, 'wb')
@@ -13,38 +19,94 @@ def removeZeros (ifn, ofn):
 	return;
 	
 def convertToArff (ifn, ofn):
-	os.system("java -cp weka.jar weka.core.converters.CSVLoader "+ifn+" -B 10000 > "+ofn)
+	os.system("java -cp " + wekaJarPath + " weka.core.converters.CSVLoader "+ifn+" -B 10000 > "+ofn)
 	return;
 	
 def replaceSeps (ifn, ofn):
-	basename_ifn = ifn.split('.')[0]
-	extension_ifn = ifn.split('.')[1]
-	ofn = basename_ifn+"_replacedSeps."+extension_ifn
+	f = open(ifn, 'rb')
+	f1 = open(ofn, 'wb')
+	reader = csv.reader(f, delimiter=';')
+	writer = csv.writer(f1, delimiter=',')
+	for row in reader:
+		writer.writerow(row)
 	
-	with open(ifn, 'rb') as f:
-		content = f.readlines()
-	with open(ofn, 'wb') as f1:
-		writer = csv.writer(f1)
-		for row in content:
-			writer.writerow (row.replace(';',','))
-	
+def convertDate (ifn, ofn, numberClass):
+	f = open(ifn, 'rb') 
+	f1 = open(ofn, 'wb')
+	reader = csv.reader(f, delimiter=',')
+	writer = csv.writer(f1, delimiter=',')
+	writer.writerow(reader.next())
+
+	for row in reader: 
+		row[numberClass] = time.mktime(datetime.datetime.strptime(row[numberClass], "%d/%m/%Y").timetuple())
+		writer.writerow(row)
+
 def standardize (ifn, ofn):
-	os.system("java -cp ../lib/weka.jar weka.filters.unsupervised.attribute.Standardize -i "+ifn+" -o "+ofn)
+	os.system("java -cp " + wekaJarPath + " weka.filters.unsupervised.attribute.Standardize -i "+ifn+" -o "+ofn)
+
+def nominalToBinary(ifn, ofn):
+	os.system("java -cp " + wekaJarPath + " weka.filters.supervised.attribute.NominalToBinary -c 23 -i " + ifn + " -o " + ofn)
+
+
+# ----- Train Methods ----- #
+
+
+# ----- Models ----- #
+def model1(trainFilename, devFilename, testFilename, modelDir): 
+	dataFilename = trainFilename 
+	pointerFilename = dataFilename
+	basename_inputFilename = dataFilename.split('.')[0]
+	extension_inputFilename = dataFilename.split('.')[1] 
+
+	print("Etape 1 | Preparation des donnees ")
+	print("Etape 1.1 | Transformation du fichier csv ',' en ';'")
+	sepsFilename = basename_inputFilename + "_SEPS." + extension_inputFilename
+	replaceSeps(dataFilename, sepsFilename)
+	pointerFilename = sepsFilename;
+	print("inf | fichier " + pointerFilename + " cree")
 	
+	print("Etape 1.2 | Suppression des instances avec une valeur NA dans un de leur champs.")
+	rzFilename = basename_inputFilename + "_RZ." + extension_inputFilename
+	removeZeros(pointerFilename, rzFilename)
+	pointerFilename = rzFilename
+	print("inf | fichier " + pointerFilename + " cree")
+
+	print("Etape 1.3 | Transformation de la date en timestamp")
+	timestampFilename = basename_inputFilename + "_timestamp." + extension_inputFilename
+	convertDate(pointerFilename, timestampFilename, 8)
+	pointerFilename = timestampFilename
+	print("inf | fichier " + pointerFilename + " cree")
+		
+
+	print("Etape 1.4 | Transformation du fichier en arff")
+	arffFilename = basename_inputFilename+".arff"
+	convertToArff (pointerFilename, arffFilename)
+	pointerFilename = arffFilename
+	print("info | fichier " + pointerFilename + " cree")
+		
+	print("Etape 1.5 | NominalToBinary -c 23")
+	ntbFilename = basename_inputFilename + "_NTB.arff"
+	nominalToBinary(pointerFilename, ntbFilename)
+	pointerFilename = ntbFilename
+	print("inf | fichier " + pointerFilename + " cree")
+	
+	print
+	print("Etape 2 | Creation du model ")
+	modelFilename = "modelTrained.model"
+	trainOutputFilename = "trainOutput.txt"
+	os.system("java -cp " + wekaJarPath + " weka.classifiers.bayes.BayesNet -c 44 -t " + pointerFilename + " -d " + modelDir + modelFilename + " > " + modelDir + trainOutputFilename)
+	print("inf | Model cree, fichier accessible " + modelDir)	
+	
+	print("Etape 3 | Validation") 
+	print("inf | En cours de deveoppement")
+
+	print("Etape 4 | Test du model ") 
+	print("inf | En cours de developpement")
+
+
+# ----- MAIN ----- #
 def main ():
-	inputFilename=""
-	if len(sys.argv)==2 and sys.argv[1]:
-		inputFilename = sys.argv[1]
-		
-		replacedSeps_filename = ''
-		replaceSeps (inputFilename, replacedSeps_filename)
-		
-		basename_inputFilename = inputFilename.split('.')[0]
-		extension_inputFilename = inputFilename.split('.')[1]
-		
-		inputFilenameWoZeros = basename_inputFilename+"-wozeros."+extension_inputFilename
-		removeZeros (replacedSeps_filename, inputFilenameWoZeros)
-		
-		arffFilename = basename_inputFilename+".arff"
-		convertToArff (inputFilenameWoZeros, arffFilename)
+	model1("data/KTFGHU14.csv", "data/KTFGHU14.csv", "data/KTFGHU14.csv", "models/model1/")
 	
+
+main()

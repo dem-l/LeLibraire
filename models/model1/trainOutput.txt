@@ -1,0 +1,113 @@
+
+Bayes Network Classifier
+Using ADTree
+#attributes=44 #classindex=43
+Network structure (nodes followed by parents)
+LocalId(1): ProvPur 
+GlobalId(1): ProvPur 
+Age(1): ProvPur 
+Gender(1): ProvPur 
+Region=SW(1): ProvPur 
+Region=NE(1): ProvPur 
+Region=SE(1): ProvPur 
+Region=NW(1): ProvPur 
+CityCode=M(1): ProvPur 
+CityCode=S(1): ProvPur 
+CityCode=D(1): ProvPur 
+CityCode=G(1): ProvPur 
+CityCode=B(1): ProvPur 
+CityCode=K(1): ProvPur 
+CityCode=P(1): ProvPur 
+CityCode=R(1): ProvPur 
+CityCode=F(1): ProvPur 
+CityCode=Q(1): ProvPur 
+CityCode=J(1): ProvPur 
+CityCode=L(1): ProvPur 
+CityCode=C(1): ProvPur 
+CityCode=N(1): ProvPur 
+CityCode=E(1): ProvPur 
+CityCode=O(1): ProvPur 
+CityCode=A(1): ProvPur 
+CityCode=I(1): ProvPur 
+CityCode=H(1): ProvPur 
+TotalSpent(1): ProvPur 
+TotalPur(1): ProvPur 
+FirstPur(1): ProvPur 
+LastPur(1): ProvPur 
+NovelPur(1): ProvPur 
+ChildPur(1): ProvPur 
+YouthPur(1): ProvPur 
+CookPur(1): ProvPur 
+DiyPur(1): ProvPur 
+RefPur(1): ProvPur 
+ArtPur(2): ProvPur 
+GeogPur(1): ProvPur 
+ProvCook(1): ProvPur 
+ProvAtlas(1): ProvPur 
+ProvArt(1): ProvPur 
+RelPur(2): ProvPur 
+ProvPur(2): 
+LogScore Bayes: -3117.1271417929265
+LogScore BDeu: -3120.562942675415
+LogScore MDL: -3124.549519479733
+LogScore ENTROPY: -3103.9850924813613
+LogScore AIC: -3108.9850924813613
+
+
+Time taken to build model: 0.29 seconds
+Time taken to test model on training data: 0.14 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances        3419               91.515  %
+Incorrectly Classified Instances       317                8.485  %
+Kappa statistic                          0     
+Mean absolute error                      0.1526
+Root mean squared error                  0.2769
+Relative absolute error                 98.1383 %
+Root relative squared error             99.375  %
+Total Number of Instances             3736     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    1,000    0,915      1,000    0,956      0,000    0,571     0,927     No
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,571     0,119     Yes
+Weighted Avg.    0,915    0,915    0,837      0,915    0,875      0,000    0,571     0,858     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 3419    0 |    a = No
+  317    0 |    b = Yes
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances        3419               91.515  %
+Incorrectly Classified Instances       317                8.485  %
+Kappa statistic                          0     
+Mean absolute error                      0.1532
+Root mean squared error                  0.2781
+Relative absolute error                 98.507  %
+Root relative squared error             99.8128 %
+Total Number of Instances             3736     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    1,000    0,915      1,000    0,956      0,000    0,547     0,922     No
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,547     0,120     Yes
+Weighted Avg.    0,915    0,915    0,837      0,915    0,875      0,000    0,547     0,854     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 3419    0 |    a = No
+  317    0 |    b = Yes
+
