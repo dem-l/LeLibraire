@@ -47,67 +47,67 @@ ProvAtlas(1): ProvPur
 ProvArt(1): ProvPur 
 RelPur(2): ProvPur 
 ProvPur(2): 
-LogScore Bayes: -3117.1271417929265
-LogScore BDeu: -3120.562942675415
-LogScore MDL: -3124.549519479733
-LogScore ENTROPY: -3103.9850924813613
-LogScore AIC: -3108.9850924813613
+LogScore Bayes: -2364.286273684274
+LogScore BDeu: -2367.722074566762
+LogScore MDL: -2371.1245292347176
+LogScore ENTROPY: -2351.837835550215
+LogScore AIC: -2356.837835550215
 
 
-Time taken to build model: 0.29 seconds
-Time taken to test model on training data: 0.14 seconds
+Time taken to build model: 0.27 seconds
+Time taken to test model on training data: 0.11 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        3419               91.515  %
-Incorrectly Classified Instances       317                8.485  %
+Correctly Classified Instances        2051               91.5216 %
+Incorrectly Classified Instances       190                8.4784 %
 Kappa statistic                          0     
-Mean absolute error                      0.1526
-Root mean squared error                  0.2769
-Relative absolute error                 98.1383 %
-Root relative squared error             99.375  %
-Total Number of Instances             3736     
+Mean absolute error                      0.1532
+Root mean squared error                  0.2775
+Relative absolute error                 98.5058 %
+Root relative squared error             99.6245 %
+Total Number of Instances             2241     
 
 
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 1,000    1,000    0,915      1,000    0,956      0,000    0,571     0,927     No
-                 0,000    0,000    0,000      0,000    0,000      0,000    0,571     0,119     Yes
-Weighted Avg.    0,915    0,915    0,837      0,915    0,875      0,000    0,571     0,858     
+                 1,000    1,000    0,915      1,000    0,956      0,000    0,607     0,933     No
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,607     0,122     Yes
+Weighted Avg.    0,915    0,915    0,838      0,915    0,875      0,000    0,607     0,864     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
- 3419    0 |    a = No
-  317    0 |    b = Yes
+ 2051    0 |    a = No
+  190    0 |    b = Yes
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        3419               91.515  %
-Incorrectly Classified Instances       317                8.485  %
+Correctly Classified Instances        2051               91.5216 %
+Incorrectly Classified Instances       190                8.4784 %
 Kappa statistic                          0     
-Mean absolute error                      0.1532
-Root mean squared error                  0.2781
-Relative absolute error                 98.507  %
-Root relative squared error             99.8128 %
-Total Number of Instances             3736     
+Mean absolute error                      0.1547
+Root mean squared error                  0.2796
+Relative absolute error                 99.4867 %
+Root relative squared error            100.3556 %
+Total Number of Instances             2241     
 
 
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 1,000    1,000    0,915      1,000    0,956      0,000    0,547     0,922     No
-                 0,000    0,000    0,000      0,000    0,000      0,000    0,547     0,120     Yes
-Weighted Avg.    0,915    0,915    0,837      0,915    0,875      0,000    0,547     0,854     
+                 1,000    1,000    0,915      1,000    0,956      0,000    0,580     0,929     No
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,580     0,112     Yes
+Weighted Avg.    0,915    0,915    0,838      0,915    0,875      0,000    0,580     0,860     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
- 3419    0 |    a = No
-  317    0 |    b = Yes
+ 2051    0 |    a = No
+  190    0 |    b = Yes
 

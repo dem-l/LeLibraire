@@ -48,12 +48,25 @@ def nominalToBinary(ifn, ofn):
 	os.system("java -cp " + wekaJarPath + " weka.filters.supervised.attribute.NominalToBinary -c 23 -i " + ifn + " -o " + ofn)
 
 
+# ----- Cut Data ----- #
+def cutData(corpusFilename, trainFilename, devFilename, testFilename):
+	tmp_filename = "40percent_data.arff";
+
+	os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 60 -B 0 -S 1 -i " + corpusFilename + " -c 44 -no-replacement -o " + trainFilename)
+	print("inf | Fichier d'entrainement cree")
+
+	os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 60 -B 0 -S 1 -i " + corpusFilename + " -c 44 -V -no-replacement -o " + tmp_filename)	
+ 
+	os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 50 -B 0 -S 1 -i " + tmp_filename + " -c 44 -no-replacement -o " + devFilename)
+	print("inf | Fichier de validation cree")
+
+	os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 50 -B 0 -S 1 -i " + tmp_filename + " -c 44 -V -no-replacement -o " + testFilename)
+	print("inf | Fichier de test cree")
+
+
 # ----- Train Methods ----- #
-
-
-# ----- Models ----- #
-def model1(trainFilename, devFilename, testFilename, modelDir): 
-	dataFilename = trainFilename 
+def preparation1(corpus, trainFilename, devFilename, testFilename):
+	dataFilename = corpus 
 	pointerFilename = dataFilename
 	basename_inputFilename = dataFilename.split('.')[0]
 	extension_inputFilename = dataFilename.split('.')[1] 
@@ -90,23 +103,38 @@ def model1(trainFilename, devFilename, testFilename, modelDir):
 	pointerFilename = ntbFilename
 	print("inf | fichier " + pointerFilename + " cree")
 	
-	print()
-	print("Etape 2 | Creation du model ")
+	print
+	print("Etape 2 | Decoupage du corpus")
+	cutData(pointerFilename, trainFilename, devFilename, testFilename)
+
+
+# ----- Models ----- #
+def model1(trainFilename, devFilename, testFilename, modelDir): 
+	print
+	print("Etape 3 | Creation du model ")
 	modelFilename = "modelTrained.model"
 	trainOutputFilename = "trainOutput.txt"
-	os.system("java -cp " + wekaJarPath + " weka.classifiers.bayes.BayesNet -c 44 -t " + pointerFilename + " -d " + modelDir + modelFilename + " > " + modelDir + trainOutputFilename)
+	os.system("java -cp " + wekaJarPath + " weka.classifiers.bayes.BayesNet -c 44 -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + trainOutputFilename)
 	print("inf | Model cree, fichier accessible " + modelDir)	
 	
-	print("Etape 3 | Validation") 
-	print("inf | En cours de deveoppement")
-
-	print("Etape 4 | Test du model ") 
+	print
+	print("Etape 4 | Validation") 
 	print("inf | En cours de developpement")
+
+	print
+	print("Etape 5 | Test du model ") 
+	print("inf | En cours de developpement")
+ 	os.system("java -cp " + wekaJarPath + " weka.classifiers.bayes.BayesNet.J48 -l " + modelDir + modelFilename + " -T " + testFilename)
 
 
 # ----- MAIN ----- #
 def main ():
-	model1("data/KTFGHU14.csv", "data/KTFGHU14.csv", "data/KTFGHU14.csv", "models/model1/")
-	
+	corpus = "data/KTFGHU14.csv"
+	prep1_trainFilename = "data/KTFGHU14_train.arff"
+	prep1_devFilename = "data/KTFGHU14_dev.arff"
+	prep1_testFilename = "data/KTFGHU14_test.arff"
+
+	preparation1(corpus, prep1_trainFilename, prep1_devFilename, prep1_testFilename)
+	model1(prep1_trainFilename, prep1_devFilename, prep1_testFilename, "models/model1/")
 
 main()
