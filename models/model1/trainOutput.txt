@@ -54,8 +54,8 @@ LogScore ENTROPY: -2351.837835550215
 LogScore AIC: -2356.837835550215
 
 
-Time taken to build model: 0.12 seconds
-Time taken to test model on training data: 0.06 seconds
+Time taken to build model: 0.35 seconds
+Time taken to test model on training data: 0.21 seconds
 
 === Error on training data ===
 

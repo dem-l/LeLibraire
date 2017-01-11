@@ -1,0 +1,1130 @@
+
+Options: -L 0.3 -M 0.9 -N 10 -V 0 -S 0 -E 20 -H a 
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    1.7376498871484174
+    Node 2    0.5296682372367694
+    Node 3    0.4261555959254039
+    Node 4    0.3637717210883277
+    Node 5    0.39354313320035217
+    Node 6    0.11311328826869366
+    Node 7    0.4006892116617284
+    Node 8    0.3394636135849204
+    Node 9    0.47244081426465884
+    Node 10    0.3842187999072526
+    Node 11    0.4253238075917577
+    Node 12    0.26732612359780156
+    Node 13    0.21269843248728834
+    Node 14    0.4438520101509828
+    Node 15    0.3596930313369968
+    Node 16    0.8411168751426855
+    Node 17    0.2637022564763655
+    Node 18    0.4030285952839868
+    Node 19    0.5085260503578002
+    Node 20    0.33251889624766795
+    Node 21    0.35463826312054203
+    Node 22    0.3710007100167621
+    Node 23    0.281449482160549
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -1.737372664482645
+    Node 2    -0.553567634412086
+    Node 3    -0.43095044664955906
+    Node 4    -0.33588492199503756
+    Node 5    -0.42421105170545054
+    Node 6    -0.11000651119626974
+    Node 7    -0.45831157431648617
+    Node 8    -0.37454279492360293
+    Node 9    -0.4434189681690866
+    Node 10    -0.3942165221411928
+    Node 11    -0.46121558516366173
+    Node 12    -0.2744720556297912
+    Node 13    -0.21761558320486488
+    Node 14    -0.43409851269448785
+    Node 15    -0.3480827638887077
+    Node 16    -0.8484122255979769
+    Node 17    -0.2256481732653519
+    Node 18    -0.3708863525033561
+    Node 19    -0.4620302858099955
+    Node 20    -0.3440659732946062
+    Node 21    -0.3029559126650749
+    Node 22    -0.3653883573254168
+    Node 23    -0.3191990597483572
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -0.14419869459744852
+    Attrib LocalId    0.8136651976281454
+    Attrib GlobalId    0.8103206691081775
+    Attrib Age    0.1765375526683804
+    Attrib Gender    -0.4967525968384547
+    Attrib Region=SW    0.30036731366060604
+    Attrib Region=NE    -0.06698174839249683
+    Attrib Region=SE    -0.3286347329999388
+    Attrib Region=NW    0.5811014459556558
+    Attrib CityCode=M    -0.6058079103901698
+    Attrib CityCode=S    0.4831243653349886
+    Attrib CityCode=D    0.8247136395950386
+    Attrib CityCode=G    -0.10116545791207392
+    Attrib CityCode=B    -0.6351872984411847
+    Attrib CityCode=K    0.30732032581054614
+    Attrib CityCode=P    0.43416102339432794
+    Attrib CityCode=R    0.007204453887473556
+    Attrib CityCode=F    -0.10091171994267856
+    Attrib CityCode=Q    -0.7641424364189682
+    Attrib CityCode=J    0.42920331960044433
+    Attrib CityCode=L    0.504115146277804
+    Attrib CityCode=C    0.33833619860560427
+    Attrib CityCode=N    0.4776107766253256
+    Attrib CityCode=E    0.18686394111151122
+    Attrib CityCode=O    0.7503167511502693
+    Attrib CityCode=A    0.47388251216009347
+    Attrib CityCode=I    -0.17761515488696272
+    Attrib CityCode=H    0.4384797307327507
+    Attrib TotalSpent    -0.42911357613048634
+    Attrib TotalPur    -1.0045238616722303
+    Attrib FirstPur    0.40153004580267904
+    Attrib LastPur    0.7077609124188865
+    Attrib NovelPur    0.02253494699507803
+    Attrib ChildPur    0.16861659029328682
+    Attrib YouthPur    -0.14700352420883986
+    Attrib CookPur    -0.09419593212023843
+    Attrib DiyPur    -0.43922391813590766
+    Attrib RefPur    -0.1558817987072857
+    Attrib ArtPur    -0.5881362447088052
+    Attrib GeogPur    -0.3556097591156242
+    Attrib ProvCook    0.08137301422774768
+    Attrib ProvAtlas    0.02946488314699543
+    Attrib ProvArt    -0.06370004513968433
+    Attrib RelPur    -0.8104946388699531
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -0.2688989215638719
+    Attrib LocalId    0.45268351590366884
+    Attrib GlobalId    0.45230099173346927
+    Attrib Age    0.015708021655138543
+    Attrib Gender    -0.6861632005069601
+    Attrib Region=SW    0.3949331195492228
+    Attrib Region=NE    -0.028540641015934634
+    Attrib Region=SE    -0.2698326840652816
+    Attrib Region=NW    0.3126719401547229
+    Attrib CityCode=M    -0.025178601524046308
+    Attrib CityCode=S    0.5493477888858357
+    Attrib CityCode=D    0.6258194695703438
+    Attrib CityCode=G    -0.10837006672046852
+    Attrib CityCode=B    -0.13089708599406122
+    Attrib CityCode=K    0.2025936001781814
+    Attrib CityCode=P    0.41496335878243157
+    Attrib CityCode=R    0.05588890151255899
+    Attrib CityCode=F    -0.0016949391919658047
+    Attrib CityCode=Q    -0.28055901872291145
+    Attrib CityCode=J    0.410040293496423
+    Attrib CityCode=L    0.27398319791096337
+    Attrib CityCode=C    0.30944042099105384
+    Attrib CityCode=N    0.5534870602341985
+    Attrib CityCode=E    0.12703503172124395
+    Attrib CityCode=O    0.42287342593503285
+    Attrib CityCode=A    0.27134516775682094
+    Attrib CityCode=I    -0.07241110236448899
+    Attrib CityCode=H    0.19953437373519547
+    Attrib TotalSpent    -0.4147336215598241
+    Attrib TotalPur    -0.6996549728551121
+    Attrib FirstPur    0.2033106879440557
+    Attrib LastPur    0.5080238891855309
+    Attrib NovelPur    0.14614804340479612
+    Attrib ChildPur    0.203816948109982
+    Attrib YouthPur    0.019010701740264785
+    Attrib CookPur    0.26056613621181357
+    Attrib DiyPur    -0.1459301990244036
+    Attrib RefPur    -0.10633915852426276
+    Attrib ArtPur    -0.6722666452070807
+    Attrib GeogPur    -0.254700175307749
+    Attrib ProvCook    0.28892395329931975
+    Attrib ProvAtlas    0.026805046487861653
+    Attrib ProvArt    -0.10209768458090418
+    Attrib RelPur    -0.7676025585023929
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -0.15662215928716094
+    Attrib LocalId    0.2785567487249804
+    Attrib GlobalId    0.2479577944576999
+    Attrib Age    0.004050070023798211
+    Attrib Gender    -0.29677930919466483
+    Attrib Region=SW    0.1424724395567968
+    Attrib Region=NE    0.1660123083780306
+    Attrib Region=SE    -0.28296526482579504
+    Attrib Region=NW    0.3683551290879854
+    Attrib CityCode=M    -0.2392895146959431
+    Attrib CityCode=S    0.5567337164382202
+    Attrib CityCode=D    0.35808126190405937
+    Attrib CityCode=G    0.05815577458478077
+    Attrib CityCode=B    -0.07370307863874198
+    Attrib CityCode=K    0.22360380070970443
+    Attrib CityCode=P    0.022258018921968936
+    Attrib CityCode=R    -0.007951861514645922
+    Attrib CityCode=F    -0.19033112971909855
+    Attrib CityCode=Q    -0.1518741208362134
+    Attrib CityCode=J    0.5947449008141927
+    Attrib CityCode=L    0.3951316144264203
+    Attrib CityCode=C    0.2778173889756776
+    Attrib CityCode=N    0.36545966456979717
+    Attrib CityCode=E    0.04689839679849397
+    Attrib CityCode=O    0.45652543084022396
+    Attrib CityCode=A    0.09446814401113605
+    Attrib CityCode=I    -0.12260041149247909
+    Attrib CityCode=H    0.1945007507008107
+    Attrib TotalSpent    -0.6875660392578639
+    Attrib TotalPur    -0.40342761274075156
+    Attrib FirstPur    -0.06426808673826365
+    Attrib LastPur    0.6934134291166385
+    Attrib NovelPur    0.1481392921275673
+    Attrib ChildPur    0.28962769529098004
+    Attrib YouthPur    -0.0063494940626851225
+    Attrib CookPur    0.33398989669772705
+    Attrib DiyPur    -0.1751913487049927
+    Attrib RefPur    -0.0330611866611273
+    Attrib ArtPur    -0.5248895704132579
+    Attrib GeogPur    -0.3771962813008058
+    Attrib ProvCook    0.3306163466710018
+    Attrib ProvAtlas    -0.06455517643561913
+    Attrib ProvArt    -0.253044391973448
+    Attrib RelPur    -0.794802810196893
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -0.23560248975057102
+    Attrib LocalId    0.4287578220929658
+    Attrib GlobalId    0.38834068931273374
+    Attrib Age    0.2647424408696726
+    Attrib Gender    -0.46787452037259875
+    Attrib Region=SW    0.2107982138085733
+    Attrib Region=NE    -0.27706360815638836
+    Attrib Region=SE    -0.12236390549818452
+    Attrib Region=NW    0.6120377822965111
+    Attrib CityCode=M    -0.1978368752923052
+    Attrib CityCode=S    0.2974549976536431
+    Attrib CityCode=D    0.281572903866913
+    Attrib CityCode=G    0.38889169734670725
+    Attrib CityCode=B    -0.14755474613072714
+    Attrib CityCode=K    0.16450780877713955
+    Attrib CityCode=P    0.10764803645579668
+    Attrib CityCode=R    0.2867025553527967
+    Attrib CityCode=F    0.0984039194640262
+    Attrib CityCode=Q    0.037905356956284414
+    Attrib CityCode=J    0.4548878891381073
+    Attrib CityCode=L    0.6032633692951928
+    Attrib CityCode=C    0.46573711191587447
+    Attrib CityCode=N    0.5191362432496925
+    Attrib CityCode=E    0.2200948544550079
+    Attrib CityCode=O    0.5338773710839068
+    Attrib CityCode=A    -0.007989463204471144
+    Attrib CityCode=I    -0.25966112493159543
+    Attrib CityCode=H    0.012710741896749023
+    Attrib TotalSpent    -0.6122887590247624
+    Attrib TotalPur    -0.5782573190014968
+    Attrib FirstPur    -0.005730567132574331
+    Attrib LastPur    0.6540160398959355
+    Attrib NovelPur    0.030423495886418492
+    Attrib ChildPur    0.28953620835126176
+    Attrib YouthPur    0.07468654753283789
+    Attrib CookPur    0.22280214031659454
+    Attrib DiyPur    -0.22171041276390577
+    Attrib RefPur    -0.22043893907312517
+    Attrib ArtPur    -0.27060880105754126
+    Attrib GeogPur    -0.32946896071647663
+    Attrib ProvCook    0.2887773971261564
+    Attrib ProvAtlas    -0.0590157515968052
+    Attrib ProvArt    -0.18027024394071564
+    Attrib RelPur    -0.6254891553843125
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -0.2325244835241504
+    Attrib LocalId    0.24183513848031646
+    Attrib GlobalId    0.23179618549323908
+    Attrib Age    -0.03640700644521646
+    Attrib Gender    -0.4506565671310719
+    Attrib Region=SW    -0.12384372988646673
+    Attrib Region=NE    0.1578605190676095
+    Attrib Region=SE    0.2859695400967671
+    Attrib Region=NW    0.10712958941427002
+    Attrib CityCode=M    0.09900776339571607
+    Attrib CityCode=S    0.10977272073315812
+    Attrib CityCode=D    0.35964599390766333
+    Attrib CityCode=G    0.013459035201547566
+    Attrib CityCode=B    0.06539012936657754
+    Attrib CityCode=K    0.46753197374553407
+    Attrib CityCode=P    0.16181779515685898
+    Attrib CityCode=R    0.2938389650197533
+    Attrib CityCode=F    0.25400776519011503
+    Attrib CityCode=Q    -0.2956768861278413
+    Attrib CityCode=J    0.23083330690425494
+    Attrib CityCode=L    0.14850726547092216
+    Attrib CityCode=C    0.39688237785269653
+    Attrib CityCode=N    0.05269926633857385
+    Attrib CityCode=E    0.44290903018541206
+    Attrib CityCode=O    0.3596210553442307
+    Attrib CityCode=A    0.18763342245045048
+    Attrib CityCode=I    0.32901009018749044
+    Attrib CityCode=H    0.43787006432473835
+    Attrib TotalSpent    -0.045263141841484215
+    Attrib TotalPur    -0.17773512786784296
+    Attrib FirstPur    0.13444445205924566
+    Attrib LastPur    0.40978636653185885
+    Attrib NovelPur    0.3329055512446514
+    Attrib ChildPur    0.45238854919554694
+    Attrib YouthPur    0.14569482020901928
+    Attrib CookPur    0.6130659991117302
+    Attrib DiyPur    0.1620975387413694
+    Attrib RefPur    -0.024174669327141976
+    Attrib ArtPur    -0.8428757696877279
+    Attrib GeogPur    -0.484584932689695
+    Attrib ProvCook    0.39563340271036906
+    Attrib ProvAtlas    -0.25282612434360296
+    Attrib ProvArt    -0.28118555473400364
+    Attrib RelPur    -1.1682650597747117
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -0.2240913636162369
+    Attrib LocalId    0.3818220785322184
+    Attrib GlobalId    0.33013198376945807
+    Attrib Age    -0.06566540555774615
+    Attrib Gender    -0.4173022410995707
+    Attrib Region=SW    0.1730754539504902
+    Attrib Region=NE    0.21522087266287823
+    Attrib Region=SE    -0.1545765339634077
+    Attrib Region=NW    0.20603879693937216
+    Attrib CityCode=M    -0.1395088373912452
+    Attrib CityCode=S    0.5774602128284428
+    Attrib CityCode=D    0.6245574072353641
+    Attrib CityCode=G    0.0768820060094317
+    Attrib CityCode=B    -0.0747708471673304
+    Attrib CityCode=K    0.23562444704097635
+    Attrib CityCode=P    0.16813774692564082
+    Attrib CityCode=R    0.06601561431570291
+    Attrib CityCode=F    -0.0884595345602847
+    Attrib CityCode=Q    -0.12961768168851825
+    Attrib CityCode=J    0.22922511782045743
+    Attrib CityCode=L    0.13442343106742466
+    Attrib CityCode=C    0.32480348792188374
+    Attrib CityCode=N    0.3140388333269089
+    Attrib CityCode=E    0.15993867978685058
+    Attrib CityCode=O    0.4598137216257295
+    Attrib CityCode=A    0.20021106558158677
+    Attrib CityCode=I    4.011252053781094E-4
+    Attrib CityCode=H    0.2598844683691746
+    Attrib TotalSpent    -0.4471316178016637
+    Attrib TotalPur    -0.4058040768238276
+    Attrib FirstPur    0.11467014499677784
+    Attrib LastPur    0.47251446790572765
+    Attrib NovelPur    0.2022222093844071
+    Attrib ChildPur    0.18816698933983786
+    Attrib YouthPur    -0.02928981838382894
+    Attrib CookPur    0.37100394569655504
+    Attrib DiyPur    -0.15687488123497942
+    Attrib RefPur    0.005887308006914619
+    Attrib ArtPur    -0.6655974569405642
+    Attrib GeogPur    -0.35802263499014597
+    Attrib ProvCook    0.40870268024910317
+    Attrib ProvAtlas    -0.05241555060767028
+    Attrib ProvArt    -0.18947740682396272
+    Attrib RelPur    -0.8445052297104578
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -0.2611051691278838
+    Attrib LocalId    0.5886069088155526
+    Attrib GlobalId    0.538874884144103
+    Attrib Age    0.026361441279669138
+    Attrib Gender    -0.49866937606163075
+    Attrib Region=SW    0.30042657845999743
+    Attrib Region=NE    0.10257391888661756
+    Attrib Region=SE    -0.1582524862155852
+    Attrib Region=NW    0.1509761904108151
+    Attrib CityCode=M    0.17095871666319565
+    Attrib CityCode=S    0.2904250776216339
+    Attrib CityCode=D    0.4281258626988724
+    Attrib CityCode=G    -0.0068179445313706595
+    Attrib CityCode=B    -0.050815851344563734
+    Attrib CityCode=K    0.46068801270373266
+    Attrib CityCode=P    0.31582500003789604
+    Attrib CityCode=R    0.17270166830349498
+    Attrib CityCode=F    0.048685396327574994
+    Attrib CityCode=Q    -0.4855993597813332
+    Attrib CityCode=J    0.3138637154021017
+    Attrib CityCode=L    0.1030104102602487
+    Attrib CityCode=C    0.23750863306049363
+    Attrib CityCode=N    0.09380222029691776
+    Attrib CityCode=E    0.3435471303865082
+    Attrib CityCode=O    0.4279913117149881
+    Attrib CityCode=A    0.15752732511159212
+    Attrib CityCode=I    0.29061486103477935
+    Attrib CityCode=H    0.3771109138153956
+    Attrib TotalSpent    -0.0755779366209555
+    Attrib TotalPur    -0.30092635392754885
+    Attrib FirstPur    0.16666019439976165
+    Attrib LastPur    0.46934701942833834
+    Attrib NovelPur    0.4548078141545333
+    Attrib ChildPur    0.4352599216341712
+    Attrib YouthPur    0.06717397128333033
+    Attrib CookPur    0.5171404158565368
+    Attrib DiyPur    0.12749679970238928
+    Attrib RefPur    -0.002825505683661664
+    Attrib ArtPur    -0.8813151472577253
+    Attrib GeogPur    -0.5540347710570711
+    Attrib ProvCook    0.4627665225159969
+    Attrib ProvAtlas    -0.21693894522904805
+    Attrib ProvArt    -0.20499323602300207
+    Attrib RelPur    -1.2404469187138467
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -0.16906099691609586
+    Attrib LocalId    0.3550907125178976
+    Attrib GlobalId    0.326190439572237
+    Attrib Age    -0.15286023007657307
+    Attrib Gender    -0.825757038896221
+    Attrib Region=SW    0.14884365121763676
+    Attrib Region=NE    0.15349257280516967
+    Attrib Region=SE    -0.5072548785793071
+    Attrib Region=NW    0.622081969891512
+    Attrib CityCode=M    -0.1505076620998907
+    Attrib CityCode=S    0.40275325699682324
+    Attrib CityCode=D    0.5677366170692718
+    Attrib CityCode=G    -0.1510189031888303
+    Attrib CityCode=B    -0.38005843719219884
+    Attrib CityCode=K    0.1934866686976524
+    Attrib CityCode=P    0.2880623549173689
+    Attrib CityCode=R    -0.21169627948546613
+    Attrib CityCode=F    0.06824311372823237
+    Attrib CityCode=Q    -0.5524757004214417
+    Attrib CityCode=J    0.8130826935121795
+    Attrib CityCode=L    0.6305928500867516
+    Attrib CityCode=C    0.3833702692889509
+    Attrib CityCode=N    0.6452841214348711
+    Attrib CityCode=E    0.2615117835763666
+    Attrib CityCode=O    0.36908432157591614
+    Attrib CityCode=A    0.21970029288701073
+    Attrib CityCode=I    -0.2644430085599763
+    Attrib CityCode=H    0.04006413488036404
+    Attrib TotalSpent    -0.9647936506623311
+    Attrib TotalPur    -0.867680027758482
+    Attrib FirstPur    -0.03155718143188612
+    Attrib LastPur    1.1739009839174743
+    Attrib NovelPur    0.06045627281257967
+    Attrib ChildPur    0.2646776241400897
+    Attrib YouthPur    0.041278523879940354
+    Attrib CookPur    0.33787534603700015
+    Attrib DiyPur    -0.48790339631952917
+    Attrib RefPur    -0.12953166867857477
+    Attrib ArtPur    -0.7138032395054165
+    Attrib GeogPur    -0.345910047343658
+    Attrib ProvCook    0.386745123943592
+    Attrib ProvAtlas    0.032769525168180574
+    Attrib ProvArt    -0.2703590914015243
+    Attrib RelPur    -0.8421570815930249
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -0.25956919606048756
+    Attrib LocalId    0.23616897875216455
+    Attrib GlobalId    0.28941511722334934
+    Attrib Age    0.008116742388555493
+    Attrib Gender    -0.6163206733173952
+    Attrib Region=SW    0.18402116332161483
+    Attrib Region=NE    0.11983258197138202
+    Attrib Region=SE    -0.17707028556457718
+    Attrib Region=NW    0.25453238139605033
+    Attrib CityCode=M    0.04608158415467252
+    Attrib CityCode=S    0.5194546864160982
+    Attrib CityCode=D    0.5262142035914906
+    Attrib CityCode=G    0.03659559030041074
+    Attrib CityCode=B    0.004185679533518582
+    Attrib CityCode=K    0.24830638958294032
+    Attrib CityCode=P    0.25748621954418427
+    Attrib CityCode=R    0.0673769287046307
+    Attrib CityCode=F    0.033457191022448526
+    Attrib CityCode=Q    -0.1789292994910401
+    Attrib CityCode=J    0.3541205028440322
+    Attrib CityCode=L    0.2083604464553914
+    Attrib CityCode=C    0.2800423908365811
+    Attrib CityCode=N    0.41958411011159424
+    Attrib CityCode=E    0.14832659205994894
+    Attrib CityCode=O    0.3457198415670636
+    Attrib CityCode=A    0.17714368153906904
+    Attrib CityCode=I    -0.047921785870010884
+    Attrib CityCode=H    0.25544546723684514
+    Attrib TotalSpent    -0.37555079369417577
+    Attrib TotalPur    -0.5147659570488771
+    Attrib FirstPur    0.07651661243105974
+    Attrib LastPur    0.5147369491277912
+    Attrib NovelPur    0.1702583017803061
+    Attrib ChildPur    0.2115459887413613
+    Attrib YouthPur    0.0074261491832104815
+    Attrib CookPur    0.4138406736072467
+    Attrib DiyPur    -0.057378015800228443
+    Attrib RefPur    -0.10245271746309982
+    Attrib ArtPur    -0.6369543166157176
+    Attrib GeogPur    -0.3319386736500691
+    Attrib ProvCook    0.2976255249560899
+    Attrib ProvAtlas    0.010308530884352286
+    Attrib ProvArt    -0.12431260551195566
+    Attrib RelPur    -0.8572686925441592
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -0.1502229890610902
+    Attrib LocalId    0.43795688741740807
+    Attrib GlobalId    0.46080743129924734
+    Attrib Age    0.16131786130412581
+    Attrib Gender    -0.2504228853227976
+    Attrib Region=SW    0.20435995544152036
+    Attrib Region=NE    -0.12389154243572381
+    Attrib Region=SE    -0.20206798299466266
+    Attrib Region=NW    0.439905331811133
+    Attrib CityCode=M    -0.3273864733088097
+    Attrib CityCode=S    0.44222908099121194
+    Attrib CityCode=D    0.4590263013041666
+    Attrib CityCode=G    0.28500765466127304
+    Attrib CityCode=B    -0.13061353727011377
+    Attrib CityCode=K    0.16861483091416787
+    Attrib CityCode=P    -0.03743616799352039
+    Attrib CityCode=R    0.08278987232252272
+    Attrib CityCode=F    -0.09697846146102698
+    Attrib CityCode=Q    -0.11296106155313496
+    Attrib CityCode=J    0.3675007330731681
+    Attrib CityCode=L    0.48107001191632703
+    Attrib CityCode=C    0.3754765578731699
+    Attrib CityCode=N    0.4649089880971302
+    Attrib CityCode=E    0.07195270090162142
+    Attrib CityCode=O    0.5753306796340414
+    Attrib CityCode=A    0.14194559812735635
+    Attrib CityCode=I    -0.15291520899715855
+    Attrib CityCode=H    0.23290331492416866
+    Attrib TotalSpent    -0.7624198274373719
+    Attrib TotalPur    -0.5731706288434244
+    Attrib FirstPur    0.0010056068679280723
+    Attrib LastPur    0.6608100908655292
+    Attrib NovelPur    0.053115079187336704
+    Attrib ChildPur    0.22487410150127732
+    Attrib YouthPur    -0.05971204894155242
+    Attrib CookPur    0.24138488267151878
+    Attrib DiyPur    -0.24716148239309932
+    Attrib RefPur    -0.02009995307125337
+    Attrib ArtPur    -0.35080164366631517
+    Attrib GeogPur    -0.3214866781592022
+    Attrib ProvCook    0.24436065035090704
+    Attrib ProvAtlas    -0.04587530417399386
+    Attrib ProvArt    -0.17338674354283284
+    Attrib RelPur    -0.6739906618658255
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.24486365864718074
+    Attrib LocalId    0.40816737901053163
+    Attrib GlobalId    0.38679038756217465
+    Attrib Age    -0.030819884012132693
+    Attrib Gender    -0.635850493433166
+    Attrib Region=SW    0.20634078621442745
+    Attrib Region=NE    0.15904655832347123
+    Attrib Region=SE    0.037568097340609875
+    Attrib Region=NW    0.09423680485097197
+    Attrib CityCode=M    0.04613975304223766
+    Attrib CityCode=S    0.3392470209048448
+    Attrib CityCode=D    0.6279980572690919
+    Attrib CityCode=G    0.00300298788496949
+    Attrib CityCode=B    -0.07294107681678656
+    Attrib CityCode=K    0.39514720938213665
+    Attrib CityCode=P    0.2124672244484648
+    Attrib CityCode=R    0.27147460918339944
+    Attrib CityCode=F    0.09739536747671748
+    Attrib CityCode=Q    -0.4896050421404036
+    Attrib CityCode=J    0.2684939441848742
+    Attrib CityCode=L    0.09136310614048404
+    Attrib CityCode=C    0.3137839464474446
+    Attrib CityCode=N    0.027361634103908388
+    Attrib CityCode=E    0.3719040315403073
+    Attrib CityCode=O    0.43019958264863106
+    Attrib CityCode=A    0.17701811549231208
+    Attrib CityCode=I    0.18595499609298813
+    Attrib CityCode=H    0.4483260762531053
+    Attrib TotalSpent    -0.13575837697142604
+    Attrib TotalPur    -0.09174517880333931
+    Attrib FirstPur    -0.01756519740856322
+    Attrib LastPur    0.5075223406574068
+    Attrib NovelPur    0.5561008166340543
+    Attrib ChildPur    0.44648430200750616
+    Attrib YouthPur    0.03928590908607405
+    Attrib CookPur    0.6637900825290788
+    Attrib DiyPur    0.24387474014432967
+    Attrib RefPur    -0.008745558131491605
+    Attrib ArtPur    -0.8752062226354222
+    Attrib GeogPur    -0.5541052413773018
+    Attrib ProvCook    0.48000228815753737
+    Attrib ProvAtlas    -0.3447721963385757
+    Attrib ProvArt    -0.23323808685834124
+    Attrib RelPur    -1.1948733812950023
+Sigmoid Node 13
+    Inputs    Weights
+    Threshold    -0.3559549900937019
+    Attrib LocalId    0.48371237151041024
+    Attrib GlobalId    0.4373711021805162
+    Attrib Age    -0.07310713085026198
+    Attrib Gender    -0.7465550858372719
+    Attrib Region=SW    -0.38469811964842576
+    Attrib Region=NE    0.4612033587314583
+    Attrib Region=SE    0.47551558393335874
+    Attrib Region=NW    0.06587980524828295
+    Attrib CityCode=M    -0.05714984086487403
+    Attrib CityCode=S    0.18047842511047402
+    Attrib CityCode=D    0.299979363718854
+    Attrib CityCode=G    0.07623008264871586
+    Attrib CityCode=B    0.42504702765572383
+    Attrib CityCode=K    0.4889115375429636
+    Attrib CityCode=P    0.15398162579148267
+    Attrib CityCode=R    0.34515638721337644
+    Attrib CityCode=F    0.5178253320694645
+    Attrib CityCode=Q    -0.15883207169541558
+    Attrib CityCode=J    0.377901357156964
+    Attrib CityCode=L    0.057765475541909195
+    Attrib CityCode=C    0.2684949377754122
+    Attrib CityCode=N    0.301731044242581
+    Attrib CityCode=E    0.5401626415896554
+    Attrib CityCode=O    0.3626303077438833
+    Attrib CityCode=A    0.46284436085426345
+    Attrib CityCode=I    0.48341925219973064
+    Attrib CityCode=H    0.27914123173609223
+    Attrib TotalSpent    -0.07696101124721258
+    Attrib TotalPur    -0.40945119956125337
+    Attrib FirstPur    0.10584517744456759
+    Attrib LastPur    0.7755750727243176
+    Attrib NovelPur    0.4039645141101692
+    Attrib ChildPur    0.5353308891235986
+    Attrib YouthPur    0.23378996573094293
+    Attrib CookPur    0.7290601434541737
+    Attrib DiyPur    0.20541035164504065
+    Attrib RefPur    0.020024900441522903
+    Attrib ArtPur    -1.1800626140832315
+    Attrib GeogPur    -0.684573279923668
+    Attrib ProvCook    0.25453456000679014
+    Attrib ProvAtlas    -0.3081089019362012
+    Attrib ProvArt    -0.3846810129291301
+    Attrib RelPur    -1.7255163795515944
+Sigmoid Node 14
+    Inputs    Weights
+    Threshold    -0.3067819093175151
+    Attrib LocalId    0.306303441941561
+    Attrib GlobalId    0.2759701358245059
+    Attrib Age    0.12731257666496734
+    Attrib Gender    -1.1516909252170302
+    Attrib Region=SW    0.6324367467483984
+    Attrib Region=NE    0.025705715810454322
+    Attrib Region=SE    -0.32034241420275134
+    Attrib Region=NW    0.2504844880337429
+    Attrib CityCode=M    0.24570212366907965
+    Attrib CityCode=S    0.4798243191542003
+    Attrib CityCode=D    0.7296075629882167
+    Attrib CityCode=G    -0.13045804050379084
+    Attrib CityCode=B    -0.15660800142683542
+    Attrib CityCode=K    0.4245158763920928
+    Attrib CityCode=P    0.5259562997210929
+    Attrib CityCode=R    0.15111834544588756
+    Attrib CityCode=F    0.21362534980913672
+    Attrib CityCode=Q    -0.45882687912823916
+    Attrib CityCode=J    0.14554743547040003
+    Attrib CityCode=L    0.1824108756050779
+    Attrib CityCode=C    0.34893865183024064
+    Attrib CityCode=N    0.4160252863852703
+    Attrib CityCode=E    0.34216102871477166
+    Attrib CityCode=O    0.5318032778975547
+    Attrib CityCode=A    0.2893010107728158
+    Attrib CityCode=I    0.09611113976107577
+    Attrib CityCode=H    0.4499759320594019
+    Attrib TotalSpent    -0.21461545439305854
+    Attrib TotalPur    -0.622678561561631
+    Attrib FirstPur    0.287584581157141
+    Attrib LastPur    0.5474078650679169
+    Attrib NovelPur    0.3666935855482787
+    Attrib ChildPur    0.1985708415813143
+    Attrib YouthPur    0.07409287663326745
+    Attrib CookPur    0.6391867146421133
+    Attrib DiyPur    -0.10923440756921364
+    Attrib RefPur    -0.249747007711466
+    Attrib ArtPur    -0.8897706904658664
+    Attrib GeogPur    -0.39728206442102293
+    Attrib ProvCook    0.3957404405794039
+    Attrib ProvAtlas    -0.14299156370430927
+    Attrib ProvArt    -0.14814707719076917
+    Attrib RelPur    -1.1694798695671627
+Sigmoid Node 15
+    Inputs    Weights
+    Threshold    -0.19562359663701115
+    Attrib LocalId    0.23997589629806032
+    Attrib GlobalId    0.1369141435445121
+    Attrib Age    0.01132419130435013
+    Attrib Gender    -0.5980542414209915
+    Attrib Region=SW    0.17860820129810465
+    Attrib Region=NE    0.14775298114534346
+    Attrib Region=SE    -0.147448507246072
+    Attrib Region=NW    0.27179324577964964
+    Attrib CityCode=M    -0.11316792159271456
+    Attrib CityCode=S    0.5564752292585046
+    Attrib CityCode=D    0.5382027558896303
+    Attrib CityCode=G    0.020800047183645604
+    Attrib CityCode=B    -0.06281033738488515
+    Attrib CityCode=K    0.18097077460497626
+    Attrib CityCode=P    0.2908886058250618
+    Attrib CityCode=R    0.0419477627791735
+    Attrib CityCode=F    0.07637648458266519
+    Attrib CityCode=Q    -0.1330058122553314
+    Attrib CityCode=J    0.38841279347180435
+    Attrib CityCode=L    0.2715553685490744
+    Attrib CityCode=C    0.3297816868686032
+    Attrib CityCode=N    0.5817128726363464
+    Attrib CityCode=E    0.1975498253889149
+    Attrib CityCode=O    0.32671770976901376
+    Attrib CityCode=A    0.26892805303153855
+    Attrib CityCode=I    -0.05922216107108545
+    Attrib CityCode=H    0.2191616593666845
+    Attrib TotalSpent    -0.47166779276178483
+    Attrib TotalPur    -0.5909378566348716
+    Attrib FirstPur    0.1422930108247566
+    Attrib LastPur    0.5511306341943087
+    Attrib NovelPur    0.03909750485320005
+    Attrib ChildPur    0.2226477862501128
+    Attrib YouthPur    0.04231165882605438
+    Attrib CookPur    0.34238387713412516
+    Attrib DiyPur    -0.16139935461498833
+    Attrib RefPur    -0.10910296048938774
+    Attrib ArtPur    -0.6956989772557387
+    Attrib GeogPur    -0.2861172954512025
+    Attrib ProvCook    0.32362310793291676
+    Attrib ProvAtlas    0.04180687170927764
+    Attrib ProvArt    -0.1924556136932138
+    Attrib RelPur    -0.8458489325820923
+Sigmoid Node 16
+    Inputs    Weights
+    Threshold    -0.21834534327304891
+    Attrib LocalId    0.9906123045587145
+    Attrib GlobalId    0.9245605727775952
+    Attrib Age    0.32789841017793686
+    Attrib Gender    -0.8048458703989853
+    Attrib Region=SW    0.8874634419035641
+    Attrib Region=NE    -0.36644657573041595
+    Attrib Region=SE    -0.789216738245605
+    Attrib Region=NW    0.6718227580849938
+    Attrib CityCode=M    -0.6998183565114834
+    Attrib CityCode=S    0.34680561802019133
+    Attrib CityCode=D    1.032315815239458
+    Attrib CityCode=G    -0.3743692304532154
+    Attrib CityCode=B    -0.8226421050506928
+    Attrib CityCode=K    0.2029467832178606
+    Attrib CityCode=P    0.5750599557617817
+    Attrib CityCode=R    -0.49249825560496013
+    Attrib CityCode=F    -0.1795504848681617
+    Attrib CityCode=Q    -0.9986710252815776
+    Attrib CityCode=J    0.4022114374064945
+    Attrib CityCode=L    0.7395157450295233
+    Attrib CityCode=C    0.35536768305421806
+    Attrib CityCode=N    1.1104577489342282
+    Attrib CityCode=E    0.25374760790769924
+    Attrib CityCode=O    0.7936558086513916
+    Attrib CityCode=A    0.9455829750658565
+    Attrib CityCode=I    0.0257416590667941
+    Attrib CityCode=H    0.6151064073865432
+    Attrib TotalSpent    -1.0616156867888986
+    Attrib TotalPur    -1.5616022465299304
+    Attrib FirstPur    0.6148172148879684
+    Attrib LastPur    1.0293201595997274
+    Attrib NovelPur    -0.16090499768617567
+    Attrib ChildPur    0.0986412740214143
+    Attrib YouthPur    -0.25292759861545355
+    Attrib CookPur    -0.18902217228136098
+    Attrib DiyPur    -0.480148109623118
+    Attrib RefPur    -0.25489916227912135
+    Attrib ArtPur    -0.7265919691990027
+    Attrib GeogPur    -0.4160374379673271
+    Attrib ProvCook    -0.12374917818249229
+    Attrib ProvAtlas    0.029127072187963135
+    Attrib ProvArt    0.1082589939358476
+    Attrib RelPur    -1.0862661261276767
+Sigmoid Node 17
+    Inputs    Weights
+    Threshold    -0.27038653259104956
+    Attrib LocalId    0.31430625473973517
+    Attrib GlobalId    0.23637449611800662
+    Attrib Age    -0.10365960694103418
+    Attrib Gender    -0.4819665185359415
+    Attrib Region=SW    -0.12992779689825792
+    Attrib Region=NE    0.188175333849781
+    Attrib Region=SE    0.42984966031159894
+    Attrib Region=NW    0.13334550589396987
+    Attrib CityCode=M    -0.03256056227506116
+    Attrib CityCode=S    0.05457005270606417
+    Attrib CityCode=D    0.39741877775775547
+    Attrib CityCode=G    0.1344875328370782
+    Attrib CityCode=B    0.14429544085336418
+    Attrib CityCode=K    0.48620516886267073
+    Attrib CityCode=P    0.1615610942647921
+    Attrib CityCode=R    0.24553312819051556
+    Attrib CityCode=F    0.2672069833203554
+    Attrib CityCode=Q    -0.2279817035300714
+    Attrib CityCode=J    0.2819816555217495
+    Attrib CityCode=L    0.11340908926989045
+    Attrib CityCode=C    0.4401585475201676
+    Attrib CityCode=N    0.12573144583361837
+    Attrib CityCode=E    0.42293740305113914
+    Attrib CityCode=O    0.4897959694351515
+    Attrib CityCode=A    0.4688964642033593
+    Attrib CityCode=I    0.3348415728003848
+    Attrib CityCode=H    0.3066048254217021
+    Attrib TotalSpent    -0.1615583284610204
+    Attrib TotalPur    -0.21235537978312322
+    Attrib FirstPur    0.19403766446893497
+    Attrib LastPur    0.4626156187558081
+    Attrib NovelPur    0.346193729210994
+    Attrib ChildPur    0.45716597840785517
+    Attrib YouthPur    0.20953658268911243
+    Attrib CookPur    0.5507339132486607
+    Attrib DiyPur    0.14512708362950194
+    Attrib RefPur    0.04333354240554608
+    Attrib ArtPur    -0.8327759611714465
+    Attrib GeogPur    -0.49471439672963613
+    Attrib ProvCook    0.3218056091775928
+    Attrib ProvAtlas    -0.2492606320817427
+    Attrib ProvArt    -0.18566843850175588
+    Attrib RelPur    -1.2806255274687592
+Sigmoid Node 18
+    Inputs    Weights
+    Threshold    -0.264490369918402
+    Attrib LocalId    0.30110001406136333
+    Attrib GlobalId    0.3154538134419386
+    Attrib Age    0.029279259895392092
+    Attrib Gender    -0.9490851541967804
+    Attrib Region=SW    0.5490918475352359
+    Attrib Region=NE    0.06746432924244208
+    Attrib Region=SE    -0.2079253553093722
+    Attrib Region=NW    0.19362447289884505
+    Attrib CityCode=M    0.37301565949057813
+    Attrib CityCode=S    0.32304907451158366
+    Attrib CityCode=D    0.6562808626544018
+    Attrib CityCode=G    -0.13807023873454205
+    Attrib CityCode=B    -0.11208980604092895
+    Attrib CityCode=K    0.4430012640189377
+    Attrib CityCode=P    0.4161153940024388
+    Attrib CityCode=R    0.18734405728999085
+    Attrib CityCode=F    0.11629109669151302
+    Attrib CityCode=Q    -0.49779689669075805
+    Attrib CityCode=J    0.23923969698679468
+    Attrib CityCode=L    0.22042516172795043
+    Attrib CityCode=C    0.3236632443419548
+    Attrib CityCode=N    0.24582453379771987
+    Attrib CityCode=E    0.41475859968723205
+    Attrib CityCode=O    0.5335369597849511
+    Attrib CityCode=A    0.14235018258251916
+    Attrib CityCode=I    0.1799159133253733
+    Attrib CityCode=H    0.524823133085557
+    Attrib TotalSpent    -0.1292406857135068
+    Attrib TotalPur    -0.3699290239441426
+    Attrib FirstPur    0.17585935318467225
+    Attrib LastPur    0.49868978962951416
+    Attrib NovelPur    0.521281690041432
+    Attrib ChildPur    0.2508766597068054
+    Attrib YouthPur    0.09146490727597305
+    Attrib CookPur    0.6226428648196033
+    Attrib DiyPur    0.10829712391690043
+    Attrib RefPur    -0.13955050160005814
+    Attrib ArtPur    -0.911109009978402
+    Attrib GeogPur    -0.47946515078678686
+    Attrib ProvCook    0.49149047420714087
+    Attrib ProvAtlas    -0.3170005198118442
+    Attrib ProvArt    -0.1848461012262992
+    Attrib RelPur    -1.2091021143337735
+Sigmoid Node 19
+    Inputs    Weights
+    Threshold    -0.1212313066238421
+    Attrib LocalId    0.5072847795071148
+    Attrib GlobalId    0.48254354629109636
+    Attrib Age    0.09424185389370468
+    Attrib Gender    -0.11800320119773818
+    Attrib Region=SW    0.11915244059197472
+    Attrib Region=NE    0.008293277751415945
+    Attrib Region=SE    -0.27184932371699094
+    Attrib Region=NW    0.4456700415637869
+    Attrib CityCode=M    -0.4726790603060144
+    Attrib CityCode=S    0.5822947089192464
+    Attrib CityCode=D    0.41068593936556924
+    Attrib CityCode=G    0.12716927921351215
+    Attrib CityCode=B    -0.232903841153404
+    Attrib CityCode=K    0.25344699065743
+    Attrib CityCode=P    -0.0669121857587126
+    Attrib CityCode=R    -0.034745553678990224
+    Attrib CityCode=F    -0.3179238353145413
+    Attrib CityCode=Q    -0.2006210964323156
+    Attrib CityCode=J    0.3448206206094069
+    Attrib CityCode=L    0.4322665112357127
+    Attrib CityCode=C    0.3247428235789551
+    Attrib CityCode=N    0.2899078649128866
+    Attrib CityCode=E    -0.05964605964444719
+    Attrib CityCode=O    0.5840261830997897
+    Attrib CityCode=A    0.056983205188554174
+    Attrib CityCode=I    -0.13013704513072172
+    Attrib CityCode=H    0.3626392851476329
+    Attrib TotalSpent    -0.6676597012989087
+    Attrib TotalPur    -0.5040372561628805
+    Attrib FirstPur    0.12813646188574065
+    Attrib LastPur    0.6343157743390063
+    Attrib NovelPur    0.054429292230806836
+    Attrib ChildPur    0.16398739894430722
+    Attrib YouthPur    -0.07660685468970507
+    Attrib CookPur    0.1927740675827859
+    Attrib DiyPur    -0.22888718460052637
+    Attrib RefPur    0.05888717669129136
+    Attrib ArtPur    -0.42016486686168025
+    Attrib GeogPur    -0.35848379215743287
+    Attrib ProvCook    0.32566505160678044
+    Attrib ProvAtlas    -0.031013168886474735
+    Attrib ProvArt    -0.18814387834123494
+    Attrib RelPur    -0.6198795189081094
+Sigmoid Node 20
+    Inputs    Weights
+    Threshold    -0.29771023524544443
+    Attrib LocalId    0.3199468844895075
+    Attrib GlobalId    0.3091410517133156
+    Attrib Age    -0.07957965649816505
+    Attrib Gender    -0.9339466145403681
+    Attrib Region=SW    0.027692542828505962
+    Attrib Region=NE    0.46771654547061575
+    Attrib Region=SE    -0.08766636255038238
+    Attrib Region=NW    0.10088532343033041
+    Attrib CityCode=M    -0.1325657348881378
+    Attrib CityCode=S    0.5227764343363117
+    Attrib CityCode=D    0.8588870788579982
+    Attrib CityCode=G    -0.07293516694424046
+    Attrib CityCode=B    0.020136622527963995
+    Attrib CityCode=K    0.08871805535111603
+    Attrib CityCode=P    0.5718020746509689
+    Attrib CityCode=R    -0.004367372128534167
+    Attrib CityCode=F    0.35142781705698595
+    Attrib CityCode=Q    -0.5282235125255477
+    Attrib CityCode=J    0.43959557740833455
+    Attrib CityCode=L    0.16064573862528425
+    Attrib CityCode=C    0.26860542043971675
+    Attrib CityCode=N    0.6401214646582357
+    Attrib CityCode=E    0.47619186932992114
+    Attrib CityCode=O    0.28116511051147725
+    Attrib CityCode=A    0.5118984668942003
+    Attrib CityCode=I    0.25640067563823843
+    Attrib CityCode=H    0.2761549167829136
+    Attrib TotalSpent    -0.5081232238836366
+    Attrib TotalPur    -0.7546375469314154
+    Attrib FirstPur    0.12655123491296702
+    Attrib LastPur    0.9965006901400794
+    Attrib NovelPur    0.3182984671173999
+    Attrib ChildPur    0.27828785196063743
+    Attrib YouthPur    0.048847629568154576
+    Attrib CookPur    0.6544725093011116
+    Attrib DiyPur    -0.23558200781873953
+    Attrib RefPur    -0.0637144659528165
+    Attrib ArtPur    -1.1126492410613258
+    Attrib GeogPur    -0.46404562834152413
+    Attrib ProvCook    0.4405363291085497
+    Attrib ProvAtlas    -0.058435596644553306
+    Attrib ProvArt    -0.21420079813056814
+    Attrib RelPur    -1.3183142128077177
+Sigmoid Node 21
+    Inputs    Weights
+    Threshold    -0.27946343813583935
+    Attrib LocalId    0.19257997797937101
+    Attrib GlobalId    0.18378672806040258
+    Attrib Age    -0.023271910323397094
+    Attrib Gender    -0.7305044615929307
+    Attrib Region=SW    0.1034209506127069
+    Attrib Region=NE    0.14128337590117382
+    Attrib Region=SE    0.06706769928527935
+    Attrib Region=NW    0.2197599762540361
+    Attrib CityCode=M    -0.03498740736511564
+    Attrib CityCode=S    0.47010876932905304
+    Attrib CityCode=D    0.5692218546188746
+    Attrib CityCode=G    -0.0627589539338992
+    Attrib CityCode=B    -0.024759875961516367
+    Attrib CityCode=K    0.2043582919372736
+    Attrib CityCode=P    0.3682971686052042
+    Attrib CityCode=R    0.11420783572056095
+    Attrib CityCode=F    0.11484081306197959
+    Attrib CityCode=Q    -0.15616869007757003
+    Attrib CityCode=J    0.33234058022622953
+    Attrib CityCode=L    0.24736744918459969
+    Attrib CityCode=C    0.3323175529021086
+    Attrib CityCode=N    0.41668888642364177
+    Attrib CityCode=E    0.2733447974408808
+    Attrib CityCode=O    0.36830649490020356
+    Attrib CityCode=A    0.29368782784049735
+    Attrib CityCode=I    0.02138206632460906
+    Attrib CityCode=H    0.1711026922748811
+    Attrib TotalSpent    -0.21489337784627202
+    Attrib TotalPur    -0.5167005918826882
+    Attrib FirstPur    0.17313394540910557
+    Attrib LastPur    0.4984335046872078
+    Attrib NovelPur    0.10909277667780491
+    Attrib ChildPur    0.25713846825382924
+    Attrib YouthPur    0.11780015414061824
+    Attrib CookPur    0.3834499488054859
+    Attrib DiyPur    -0.08837463478800406
+    Attrib RefPur    -0.10384872240989537
+    Attrib ArtPur    -0.7843953178095662
+    Attrib GeogPur    -0.3770282862530203
+    Attrib ProvCook    0.362024281826919
+    Attrib ProvAtlas    0.0697797604542517
+    Attrib ProvArt    -0.14592897423927886
+    Attrib RelPur    -1.0208980039245117
+Sigmoid Node 22
+    Inputs    Weights
+    Threshold    -0.17247907357716338
+    Attrib LocalId    0.29157592651105485
+    Attrib GlobalId    0.21131944514885734
+    Attrib Age    -0.03980556495277624
+    Attrib Gender    -0.6001991947875179
+    Attrib Region=SW    0.15346111371788906
+    Attrib Region=NE    0.19869558205736645
+    Attrib Region=SE    -0.2202307331333811
+    Attrib Region=NW    0.28149998983084107
+    Attrib CityCode=M    -0.19264725848126119
+    Attrib CityCode=S    0.6181042085059372
+    Attrib CityCode=D    0.7160514449490893
+    Attrib CityCode=G    -0.04549474259704847
+    Attrib CityCode=B    -0.168069842864503
+    Attrib CityCode=K    0.1563929422274616
+    Attrib CityCode=P    0.2779549076381698
+    Attrib CityCode=R    -0.0768390759403248
+    Attrib CityCode=F    0.056206820733102264
+    Attrib CityCode=Q    -0.27957385290566716
+    Attrib CityCode=J    0.44950934989283203
+    Attrib CityCode=L    0.3467364306195685
+    Attrib CityCode=C    0.3751375679739906
+    Attrib CityCode=N    0.6558687300835351
+    Attrib CityCode=E    0.17796867474569777
+    Attrib CityCode=O    0.4478783818134551
+    Attrib CityCode=A    0.3244837993131865
+    Attrib CityCode=I    -0.15736668990577096
+    Attrib CityCode=H    0.16023505493418055
+    Attrib TotalSpent    -0.6175009103977945
+    Attrib TotalPur    -0.6954619079554557
+    Attrib FirstPur    0.18616624533962106
+    Attrib LastPur    0.6393619961277728
+    Attrib NovelPur    0.0041327930292464595
+    Attrib ChildPur    0.24002059902624234
+    Attrib YouthPur    0.030365020979743848
+    Attrib CookPur    0.29904356100343527
+    Attrib DiyPur    -0.35543870882904194
+    Attrib RefPur    -0.13861707790893094
+    Attrib ArtPur    -0.8169180670912937
+    Attrib GeogPur    -0.29894125496543833
+    Attrib ProvCook    0.27144695400170427
+    Attrib ProvAtlas    0.1253766246004361
+    Attrib ProvArt    -0.19947183620874723
+    Attrib RelPur    -0.8855380052645353
+Sigmoid Node 23
+    Inputs    Weights
+    Threshold    -0.2898966502986061
+    Attrib LocalId    0.09071896175803829
+    Attrib GlobalId    0.10956023159874226
+    Attrib Age    -0.13792782259379027
+    Attrib Gender    -0.8378793667095543
+    Attrib Region=SW    -0.11230190346815494
+    Attrib Region=NE    0.4784386991420817
+    Attrib Region=SE    0.08200606950934913
+    Attrib Region=NW    0.12206282896232287
+    Attrib CityCode=M    -0.11591000266131288
+    Attrib CityCode=S    0.5196569522608442
+    Attrib CityCode=D    0.6827096077383619
+    Attrib CityCode=G    0.009500468442125029
+    Attrib CityCode=B    0.123851289392823
+    Attrib CityCode=K    0.17695173305312303
+    Attrib CityCode=P    0.48257379986311566
+    Attrib CityCode=R    0.12889138283844206
+    Attrib CityCode=F    0.43710269828242126
+    Attrib CityCode=Q    -0.3439548793614573
+    Attrib CityCode=J    0.3049539083989249
+    Attrib CityCode=L    0.070677953796367
+    Attrib CityCode=C    0.34220127828146035
+    Attrib CityCode=N    0.42419229196142216
+    Attrib CityCode=E    0.40959470944339116
+    Attrib CityCode=O    0.28314900993244657
+    Attrib CityCode=A    0.38084824072741824
+    Attrib CityCode=I    0.18373010146287047
+    Attrib CityCode=H    0.22334306272892507
+    Attrib TotalSpent    -0.2941416459556965
+    Attrib TotalPur    -0.5663021295367852
+    Attrib FirstPur    0.03781964427718105
+    Attrib LastPur    0.7717837822789613
+    Attrib NovelPur    0.2791559606642058
+    Attrib ChildPur    0.24307491362655353
+    Attrib YouthPur    0.12007804363055818
+    Attrib CookPur    0.7183612463662413
+    Attrib DiyPur    -0.08625319490824887
+    Attrib RefPur    -0.07442507441942815
+    Attrib ArtPur    -1.0970677539632623
+    Attrib GeogPur    -0.4801828545736448
+    Attrib ProvCook    0.5103711317976652
+    Attrib ProvAtlas    -0.10702431533288713
+    Attrib ProvArt    -0.3052108043822128
+    Attrib RelPur    -1.3502691625855767
+Class No
+    Input
+    Node 0
+Class Yes
+    Input
+    Node 1
+
+
+Time taken to build model: 0.69 seconds
+Time taken to test model on training data: 0.12 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances        2051               91.5216 %
+Incorrectly Classified Instances       190                8.4784 %
+Kappa statistic                          0     
+Mean absolute error                      0.124 
+Root mean squared error                  0.2768
+Relative absolute error                 79.7638 %
+Root relative squared error             99.3745 %
+Total Number of Instances             2241     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    1,000    0,915      1,000    0,956      0,000    0,647     0,942     No
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,647     0,188     Yes
+Weighted Avg.    0,915    0,915    0,838      0,915    0,875      0,000    0,647     0,878     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2051    0 |    a = No
+  190    0 |    b = Yes
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances        2048               91.3878 %
+Incorrectly Classified Instances       193                8.6122 %
+Kappa statistic                          0.0059
+Mean absolute error                      0.1483
+Root mean squared error                  0.2912
+Relative absolute error                 95.3805 %
+Root relative squared error            104.5347 %
+Total Number of Instances             2241     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,998    0,995    0,915      0,998    0,955      0,020    0,578     0,929     No
+                 0,005    0,002    0,200      0,005    0,010      0,020    0,578     0,123     Yes
+Weighted Avg.    0,914    0,911    0,855      0,914    0,875      0,020    0,578     0,861     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2047    4 |    a = No
+  189    1 |    b = Yes
+

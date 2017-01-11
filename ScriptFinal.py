@@ -111,6 +111,8 @@ def preparation1(corpus, trainFilename, devFilename, testFilename):
 
 
 # ----- Models ----- #
+
+# ----- Fonction utilisant le modele Bayes Naif ----- #
 def model1(trainFilename, devFilename, testFilename, modelDir, classNumber): 
 	print
 	print("Etape 3 | Creation du model BayesNet")
@@ -123,17 +125,40 @@ def model1(trainFilename, devFilename, testFilename, modelDir, classNumber):
 	print("Etape 4 | Validation") 
 	print("inf | En cours de developpement")
 
+	
 	print
 	print("Etape 5 | Test du model ") 
 	print("inf | En cours de developpement")
 	os.system("java -cp " + wekaJarPath + " weka.classifiers.bayes.BayesNet -l " + modelDir + modelFilename + " -T " + testFilename)
 
+# ----- Fonction utilisant le modele MultilayerPerceptron ----- #
 def model2(trainFilename, devFilename, testFilename, modelDir, classNumber):
 	print
 	print("Etape 3 | creation du model ")
 	modelFilename = "modelTrained.model"
 	trainOutputFilename = "trainOutput.txt"
-	os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + trainOutputFilename)
+	# Options
+	# -L x : Taux d'apprentissage 
+	# -M x : Taux de momentum 
+	# -N x : Nombre d'iterations a effectuer
+	# -V x : Taille du pourcentage de validation fixee pour utiliser 
+	# -S x : valeur utilisee pour seeder le generateur aleatoire
+	# -E x : Threshold pour le nombre d'erreurs consecutives
+	# -H letter : 
+	# -c : index de la classe
+	
+	i=0
+	while i<=9:
+		print ("creation du model avec L = "+str(0.1+0.1*i))
+		os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L " + str(0.1+0.1*i) + " -M 0.2 -N 10 -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + "L_" + str(0.1+0.1*i) + "-" + trainOutputFilename)
+		i += 1
+	i=0
+	while i<=9:
+		print ("creation du model avec M = "+str(0.1+0.1*i))
+		os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M "+str(0.1+0.1*i)+" -N 10 -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + "M_" + str(0.1+0.1*i) + "-" + trainOutputFilename)
+		i += 1
+	
+	# os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 10 -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + trainOutputFilename)
 
 	print
 	print("Etape 4 | Validation ")
