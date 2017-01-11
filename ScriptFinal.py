@@ -1,13 +1,13 @@
 import os
 import sys
-import csv 
-import time 
-import datetime 
+import csv
+import time
+import datetime
 
-wekaJarPath = "lib/weka.jar" 
+wekaJarPath = "lib/weka.jar"
 
-# ----- Processing Data Methods ----- #	
-def removeZeros (ifn, ofn):
+# ----- Processing Data Methods ----- #
+def removeZeros(ifn, ofn):
 	f = open(ifn, 'rb')
 	f1 = open(ofn, 'wb')
 	reader = csv.reader(f, delimiter=',')
@@ -23,6 +23,8 @@ def convertToArff (ifn, ofn):
 	return;
 	
 def replaceSeps (ifn, ofn):
+	print(ifn)
+	print(ofn)
 	f = open(ifn, 'rb')
 	f1 = open(ofn, 'wb')
 	reader = csv.reader(f, delimiter=';')
@@ -109,12 +111,12 @@ def preparation1(corpus, trainFilename, devFilename, testFilename):
 
 
 # ----- Models ----- #
-def model1(trainFilename, devFilename, testFilename, modelDir): 
+def model1(trainFilename, devFilename, testFilename, modelDir, classNumber): 
 	print
-	print("Etape 3 | Creation du model ")
+	print("Etape 3 | Creation du model BayesNet")
 	modelFilename = "modelTrained.model"
 	trainOutputFilename = "trainOutput.txt"
-	os.system("java -cp " + wekaJarPath + " weka.classifiers.bayes.BayesNet -c 44 -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + trainOutputFilename)
+	os.system("java -cp " + wekaJarPath + " weka.classifiers.bayes.BayesNet -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + trainOutputFilename)
 	print("inf | Model cree, fichier accessible " + modelDir)	
 	
 	print
@@ -124,8 +126,22 @@ def model1(trainFilename, devFilename, testFilename, modelDir):
 	print
 	print("Etape 5 | Test du model ") 
 	print("inf | En cours de developpement")
- 	os.system("java -cp " + wekaJarPath + " weka.classifiers.bayes.BayesNet -l " + modelDir + modelFilename + " -T " + testFilename)
+	os.system("java -cp " + wekaJarPath + " weka.classifiers.bayes.BayesNet -l " + modelDir + modelFilename + " -T " + testFilename)
 
+def model2(trainFilename, devFilename, testFilename, modelDir, classNumber):
+	print
+	print("Etape 3 | creation du model ")
+	modelFilename = "modelTrained.model"
+	trainOutputFilename = "trainOutput.txt"
+	os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + trainOutputFilename)
+
+	print
+	print("Etape 4 | Validation ")
+	print("inf | En cours de developpement")
+
+	print 
+	print("Etape 5 | Test du model ")
+	os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -l " + modelDir + modelFilename + " -T " + testFilename)
 
 # ----- MAIN ----- #
 def main ():
@@ -135,6 +151,9 @@ def main ():
 	prep1_testFilename = "data/KTFGHU14_test.arff"
 
 	preparation1(corpus, prep1_trainFilename, prep1_devFilename, prep1_testFilename)
-	model1(prep1_trainFilename, prep1_devFilename, prep1_testFilename, "models/model1/")
+	model1(prep1_trainFilename, prep1_devFilename, prep1_testFilename, "models/model1/", "44")
+	model2(prep1_trainFilename, prep1_devFilename, prep1_testFilename, "models/model2/", "44")
+
+	
 
 main()
