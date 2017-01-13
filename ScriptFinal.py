@@ -54,17 +54,20 @@ def nominalToBinary(ifn, ofn):
 # ----- Cut Data ----- #
 def cutData(corpusFilename, trainFilename, devFilename, testFilename):
 	tmp_filename = "40percent_data.arff";
+	if(not os.path.exists(trainFilename)):
+		os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 60 -B 0 -S 1 -i " + corpusFilename + " -c 44 -no-replacement -o " + trainFilename)
+		print("inf | Fichier d'entrainement cree")
 
-	os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 60 -B 0 -S 1 -i " + corpusFilename + " -c 44 -no-replacement -o " + trainFilename)
-	print("inf | Fichier d'entrainement cree")
-
-	os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 60 -B 0 -S 1 -i " + corpusFilename + " -c 44 -V -no-replacement -o " + tmp_filename)	
+	if(not os.path.exists(devFilename) or not os.path.exists(testFilename)):
+		os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 60 -B 0 -S 1 -i " + corpusFilename + " -c 44 -V -no-replacement -o " + tmp_filename)	
  
-	os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 50 -B 0 -S 1 -i " + tmp_filename + " -c 44 -no-replacement -o " + devFilename)
-	print("inf | Fichier de validation cree")
+	if(not os.path.exists(devFilename)):
+		os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 50 -B 0 -S 1 -i " + tmp_filename + " -c 44 -no-replacement -o " + devFilename)
+		print("inf | Fichier de validation cree")
 
-	os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 50 -B 0 -S 1 -i " + tmp_filename + " -c 44 -V -no-replacement -o " + testFilename)
-	print("inf | Fichier de test cree")
+	if(not os.path.exists(testFilename)):
+		os.system("java -cp " + wekaJarPath + " weka.filters.supervised.instance.Resample -Z 50 -B 0 -S 1 -i " + tmp_filename + " -c 44 -V -no-replacement -o " + testFilename)
+		print("inf | Fichier de test cree")
 
 
 # ----- Train Methods ----- #
@@ -153,7 +156,7 @@ def model2(trainFilename, devFilename, testFilename, modelDir, classNumber):
 	# -H letter : 
 	# -c : index de la classe
 	
-	defaultL = 0.8
+	defaultL = 0.3
 	defaultM = 0.3
 	defaultN = 20
 	i=0
@@ -252,7 +255,10 @@ def model2(trainFilename, devFilename, testFilename, modelDir, classNumber):
 	yesResult = findResult(modelDir + testPrefix + "yes-" + thresholdOutputFilenameCSV, maxThreshold)
 	noResult = findResult(modelDir + testPrefix + "no-" + thresholdOutputFilenameCSV, noThreshold)
 
-	print("Yes - FMeasure => " + yesResult[9]) 
+	nbTrue = float(yesResult[0]) + float(yesResult[3])
+	nbFalse = float(yesResult[1]) + float(yesResult[2])
+	errorRate = nbFalse / (nbTrue + nbFalse)
+	print("Yes - FMeasure => " + yesResult[9] + " | Taux d'erreur => " + str(errorRate * 100) + "%")
 	print("No - FMeasure => " + noResult[9])
 
 def calculPerformance(predictionFilename):
