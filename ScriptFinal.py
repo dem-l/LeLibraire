@@ -3,6 +3,7 @@ import sys
 import csv
 import time
 import datetime
+import types
 
 wekaJarPath = "lib/weka.jar"
 
@@ -68,46 +69,47 @@ def cutData(corpusFilename, trainFilename, devFilename, testFilename):
 
 # ----- Train Methods ----- #
 def preparation1(corpus, trainFilename, devFilename, testFilename):
-	dataFilename = corpus 
-	pointerFilename = dataFilename
-	basename_inputFilename = dataFilename.split('.')[0]
-	extension_inputFilename = dataFilename.split('.')[1] 
+	if(not os.path.exists(trainFilename) or not os.path.exists(devFilename) or not os.path.exists(testFilename)):
+		dataFilename = corpus 
+		pointerFilename = dataFilename
+		basename_inputFilename = dataFilename.split('.')[0]
+		extension_inputFilename = dataFilename.split('.')[1] 
 
-	print("Etape 1 | Preparation des donnees ")
-	print("Etape 1.1 | Transformation du fichier csv ',' en ';'")
-	sepsFilename = basename_inputFilename + "_SEPS." + extension_inputFilename
-	replaceSeps(dataFilename, sepsFilename)
-	pointerFilename = sepsFilename;
-	print("inf | fichier " + pointerFilename + " cree")
-	
-	print("Etape 1.2 | Suppression des instances avec une valeur NA dans un de leur champs.")
-	rzFilename = basename_inputFilename + "_RZ." + extension_inputFilename
-	removeZeros(pointerFilename, rzFilename)
-	pointerFilename = rzFilename
-	print("inf | fichier " + pointerFilename + " cree")
-
-	print("Etape 1.3 | Transformation de la date en timestamp")
-	timestampFilename = basename_inputFilename + "_timestamp." + extension_inputFilename
-	convertDate(pointerFilename, timestampFilename, 8)
-	pointerFilename = timestampFilename
-	print("inf | fichier " + pointerFilename + " cree")
+		print("Etape 1 | Preparation des donnees ")
+		print("Etape 1.1 | Transformation du fichier csv ',' en ';'")
+		sepsFilename = basename_inputFilename + "_SEPS." + extension_inputFilename
+		replaceSeps(dataFilename, sepsFilename)
+		pointerFilename = sepsFilename;
+		print("inf | fichier " + pointerFilename + " cree")
 		
+		print("Etape 1.2 | Suppression des instances avec une valeur NA dans un de leur champs.")
+		rzFilename = basename_inputFilename + "_RZ." + extension_inputFilename
+		removeZeros(pointerFilename, rzFilename)
+		pointerFilename = rzFilename
+		print("inf | fichier " + pointerFilename + " cree")
 
-	print("Etape 1.4 | Transformation du fichier en arff")
-	arffFilename = basename_inputFilename+".arff"
-	convertToArff (pointerFilename, arffFilename)
-	pointerFilename = arffFilename
-	print("info | fichier " + pointerFilename + " cree")
+		print("Etape 1.3 | Transformation de la date en timestamp")
+		timestampFilename = basename_inputFilename + "_timestamp." + extension_inputFilename
+		convertDate(pointerFilename, timestampFilename, 8)
+		pointerFilename = timestampFilename
+		print("inf | fichier " + pointerFilename + " cree")
+			
+
+		print("Etape 1.4 | Transformation du fichier en arff")
+		arffFilename = basename_inputFilename+".arff"
+		convertToArff (pointerFilename, arffFilename)
+		pointerFilename = arffFilename
+		print("info | fichier " + pointerFilename + " cree")
+			
+		print("Etape 1.5 | NominalToBinary -c 23")
+		ntbFilename = basename_inputFilename + "_NTB.arff"
+		nominalToBinary(pointerFilename, ntbFilename)
+		pointerFilename = ntbFilename
+		print("inf | fichier " + pointerFilename + " cree")
 		
-	print("Etape 1.5 | NominalToBinary -c 23")
-	ntbFilename = basename_inputFilename + "_NTB.arff"
-	nominalToBinary(pointerFilename, ntbFilename)
-	pointerFilename = ntbFilename
-	print("inf | fichier " + pointerFilename + " cree")
-	
-	print
-	print("Etape 2 | Decoupage du corpus")
-	cutData(pointerFilename, trainFilename, devFilename, testFilename)
+		print
+		print("Etape 2 | Decoupage du corpus")
+		cutData(pointerFilename, trainFilename, devFilename, testFilename)
 
 
 # ----- Models ----- #
@@ -137,6 +139,10 @@ def model2(trainFilename, devFilename, testFilename, modelDir, classNumber):
 	print("Etape 3 | creation du model ")
 	modelFilename = "modelTrained.model"
 	trainOutputFilename = "trainOutput.txt"
+	thresholdOutputFilename = "thresholdOutput.arff"
+	thresholdOutputFilenameCSV = "thresholdOutput.csv"
+	classificationOutputFilename = "classificationOutput.csv"
+	testPrefix = "test-"
 	# Options
 	# -L x : Taux d'apprentissage 
 	# -M x : Taux de momentum 
@@ -147,26 +153,133 @@ def model2(trainFilename, devFilename, testFilename, modelDir, classNumber):
 	# -H letter : 
 	# -c : index de la classe
 	
+	defaultL = 0.8
+	defaultM = 0.3
+	defaultN = 20
 	i=0
 	while i<=9:
-		print ("creation du model avec L = "+str(0.1+0.1*i))
-		os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L " + str(0.1+0.1*i) + " -M 0.2 -N 10 -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + "L_" + str(0.1+0.1*i) + "-" + trainOutputFilename)
+		value = 0.1+0.1*i
+		print ("creation du model avec L = "+str(value))
+		prefix = "L_" + str(value) + "-"
+		if not os.path.exists(modelDir + prefix + modelFilename) or not os.path.exists(modelDir + prefix + trainOutputFilename):
+			os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L " + str(value) + " -M " + str(defaultM) + " -N " + str(defaultN) + " -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + prefix + modelFilename + " > " + modelDir + prefix + trainOutputFilename)
+		if not os.path.exists(modelDir + prefix + thresholdOutputFilename) or not os.path.exists(modelDir + prefix + classificationOutputFilename):
+			os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -l " + modelDir + prefix + modelFilename + " -T " + devFilename + " -threshold-file " + modelDir + prefix + thresholdOutputFilename + " -threshold-label Yes -classifications \"weka.classifiers.evaluation.output.prediction.CSV\" > " + modelDir + prefix + classificationOutputFilename)
+		if not os.path.exists(modelDir + prefix + thresholdOutputFilenameCSV):
+			os.system("java -cp " + wekaJarPath + " weka.core.converters.CSVSaver -i " + modelDir + prefix + thresholdOutputFilename + " -o " + modelDir + prefix + thresholdOutputFilenameCSV + " -F ,")
 		i += 1
 	i=0
 	while i<=9:
-		print ("creation du model avec M = "+str(0.1+0.1*i))
-		os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M "+str(0.1+0.1*i)+" -N 10 -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + "M_" + str(0.1+0.1*i) + "-" + trainOutputFilename)
+		value = 0.1+0.1*i
+		print ("creation du model avec M = "+str(value))
+		prefix = "M_" + str(value) + "-"
+		if not os.path.exists(modelDir + prefix + modelFilename) or not os.path.exists(modelDir + prefix + trainOutputFilename):
+			os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L " + str(defaultL) + " -M "+str(value)+" -N " + str(defaultN) + " -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + prefix + modelFilename + " > " + modelDir + prefix + trainOutputFilename)
+		if not os.path.exists(modelDir + prefix + thresholdOutputFilename) or not os.path.exists(modelDir + prefix + classificationOutputFilename):
+			os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -l " + modelDir + prefix + modelFilename + " -T " + devFilename + " -threshold-file " + modelDir + prefix + thresholdOutputFilename + " -threshold-label Yes -classifications \"weka.classifiers.evaluation.output.prediction.CSV\" > " + modelDir + prefix + classificationOutputFilename)
+		if not os.path.exists(modelDir + prefix + thresholdOutputFilenameCSV):
+			os.system("java -cp " + wekaJarPath+ " weka.core.converters.CSVSaver -i " + modelDir + prefix + thresholdOutputFilename + " -o " + modelDir + prefix + thresholdOutputFilenameCSV + " -F ,")
 		i += 1
-	
-	# os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 10 -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + modelFilename + " > " + modelDir + trainOutputFilename)
-
+	i=10
+	while i<=500:
+		value = i
+		print ("creation du model avec N = "+str(value))
+		prefix = "N_" + str(value) + "-"
+		if not os.path.exists(modelDir + prefix + modelFilename) or not os.path.exists(modelDir + prefix + trainOutputFilename):
+			os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -L " + str(defaultL) + " -M " + str(defaultM) + " -N "+str(value)+" -V 0 -S 0 -E 20 -H a -c " + classNumber + " -t " + trainFilename + " -d " + modelDir + prefix + modelFilename + " > " + modelDir + prefix + trainOutputFilename)
+		if not os.path.exists(modelDir + prefix + thresholdOutputFilename) or not os.path.exists(modelDir + prefix + classificationOutputFilename):
+			os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -l " + modelDir + prefix + modelFilename + " -T " + devFilename + " -threshold-file " + modelDir + prefix + thresholdOutputFilename + " -threshold-label Yes -classifications \"weka.classifiers.evaluation.output.prediction.CSV\" > " + modelDir + prefix + classificationOutputFilename)
+		if not os.path.exists(modelDir + prefix + thresholdOutputFilenameCSV):
+			os.system("java -cp " + wekaJarPath+ " weka.core.converters.CSVSaver -i " + modelDir + prefix + thresholdOutputFilename + " -o " + modelDir + prefix + thresholdOutputFilenameCSV + " -F ,")
+		i += 50
 	print
 	print("Etape 4 | Validation ")
-	print("inf | En cours de developpement")
+	print("Calul des f-mesures")
+
+	maxFMeasure = 0
+	maxPrefix = ""
+	maxThreshold = 0
+
+	i=0
+	while i<=9:
+		value = 0.1+0.1*i
+		prefix = "L_" + str(value) + "-"
+		result = calculPerformance(modelDir + prefix + thresholdOutputFilenameCSV)
+		if float(result[9]) > maxFMeasure:
+			maxFMeasure = float(result[9])
+			maxPrefix = prefix
+			maxThreshold = float(result[12])
+		print(prefix + " : " + str(result[0]) + " => " + result[9] + "(FMeasure) => " + result[12] + "(Threshold)")
+		i += 1
+	i=0
+
+	while i<=9:
+		value = 0.1+0.1*i
+		prefix = "M_" + str(value) + "-"
+		result = calculPerformance(modelDir + prefix + thresholdOutputFilenameCSV)
+		if float(result[9]) > maxFMeasure:
+			maxFMeasure = float(result[9])
+			maxPrefix = prefix
+			maxThreshold = float(result[12])
+		print(prefix + " : " + str(result[0]) + " => " + result[9] + "(FMeasure) => " + result[12] + "(Threshold)")
+		i += 1
+
+	i=10
+	while i<=500:
+		value = i
+		prefix = "N_" + str(value) + "-"
+		result = calculPerformance(modelDir + prefix + thresholdOutputFilenameCSV)
+		if float(result[9]) > maxFMeasure:
+			maxFMeasure = float(result[9])
+			maxPrefix = prefix
+			maxThreshold = float(result[12])
+		print(prefix + " : " + str(result[0]) + " => " + result[9] + "(FMeasure) => " + result[12] + "(Threshold)")
+		i += 50
+
+	print
+	print("Meilleur modele en dev : " + str(maxPrefix) + " avec un FMeasure de " + str(maxFMeasure) + " et un seuil de " + str(maxThreshold))
 
 	print 
-	print("Etape 5 | Test du model ")
-	os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -l " + modelDir + modelFilename + " -T " + testFilename)
+	print("Etape 5 | Test du model " + maxPrefix)
+
+	noThreshold = 1 - maxThreshold
+	os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -l " + modelDir + maxPrefix + modelFilename + " -T " + testFilename + " -threshold-file " + modelDir + testPrefix + "yes-" + thresholdOutputFilename + " -threshold-label Yes -classifications \"weka.classifiers.evaluation.output.prediction.CSV\" > " + modelDir + testPrefix + "yes-" + classificationOutputFilename)
+	os.system("java -cp " + wekaJarPath+ " weka.core.converters.CSVSaver -i " + modelDir + testPrefix + "yes-" + thresholdOutputFilename + " -o " + modelDir + testPrefix + "yes-" + thresholdOutputFilenameCSV + " -F ,")
+
+	os.system("java -cp " + wekaJarPath + " weka.classifiers.functions.MultilayerPerceptron -l " + modelDir + maxPrefix + modelFilename + " -T " + testFilename + " -threshold-file " + modelDir + testPrefix + "no-" + thresholdOutputFilename + " -threshold-label No -classifications \"weka.classifiers.evaluation.output.prediction.CSV\" > " + modelDir + testPrefix + "no-" + classificationOutputFilename)
+	os.system("java -cp " + wekaJarPath+ " weka.core.converters.CSVSaver -i " + modelDir + testPrefix + "no-" + thresholdOutputFilename + " -o " + modelDir + testPrefix + "no-" + thresholdOutputFilenameCSV + " -F ,")
+	
+	yesResult = findResult(modelDir + testPrefix + "yes-" + thresholdOutputFilenameCSV, maxThreshold)
+	noResult = findResult(modelDir + testPrefix + "no-" + thresholdOutputFilenameCSV, noThreshold)
+
+	print("Yes - FMeasure => " + yesResult[9]) 
+	print("No - FMeasure => " + noResult[9])
+
+def calculPerformance(predictionFilename):
+	f = open(predictionFilename, 'rb')
+	reader = csv.reader(f, delimiter=',')
+	rowSaved = []
+	mesure = 0
+	reader.next()
+	for row in reader:
+		if(float(row[9]) > mesure):
+			mesure = float(row[9])
+			rowSaved = row
+	return rowSaved
+
+def findResult(thresholdFilename, threshold):
+	f = open(thresholdFilename, 'rb')
+	reader = csv.reader(f, delimiter=',')
+	rowSaved = []
+	mesure = 0
+	reader.next()
+	for row in reader:
+		if(float(row[12]) == threshold):
+			return row
+		if(float(row[12]) > threshold):
+			return lastRow
+		lastRow = row
+	return None
 
 # ----- MAIN ----- #
 def main ():
@@ -179,6 +292,5 @@ def main ():
 	model1(prep1_trainFilename, prep1_devFilename, prep1_testFilename, "models/model1/", "44")
 	model2(prep1_trainFilename, prep1_devFilename, prep1_testFilename, "models/model2/", "44")
 
-	
 
 main()
